@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Update Project</title>
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body>
+    <h1>Update a Project:</h1>
+
+    <form
+      th:action="@{/addProject}"
+      th:object="${terProjectForm}"
+      method="POST"
+    >
+      <input type="hidden" th:field="*{id}" />
+      Title:
+      <input type="text" th:field="*{title}" />
+      <br />
+      Teacher:
+      <input type="text" th:field="*{teacher}" />
+      <br />
+      Student:
+      <input type="text" th:field="*{student}" />
+      <br />
+
+      <input type="submit" value="Update" />
+    </form>
+
+    <br />
+
+    <!-- Check if errorMessage is not null and not empty -->
+
+    <div
+      th:if="${errorMessage}"
+      th:utext="${errorMessage}"
+      style="color: red; font-style: italic"
+    >
+      ...
+    </div>
+  </body>
+</html>
