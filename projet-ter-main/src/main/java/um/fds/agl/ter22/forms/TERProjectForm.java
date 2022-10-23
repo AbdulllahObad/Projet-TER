@@ -4,6 +4,9 @@ public class TERProjectForm {
     private long id;
     private String title;
     private String teacher;
+
+    // secande Teacher
+    private String teacher2;
     private String student;
 
     public TERProjectForm() {
@@ -13,6 +16,14 @@ public class TERProjectForm {
         this.id = id;
         this.title = title;
         this.teacher = teacher;
+        this.student = student;
+    }
+
+    public TERProjectForm(long id, String title, String teacher, String teacher2, String student) {
+        this.id = id;
+        this.title = title;
+        this.teacher = teacher;
+        this.teacher2 = teacher2;
         this.student = student;
     }
 
@@ -43,8 +54,16 @@ public class TERProjectForm {
     public String getTeacher() {
         return teacher;
     }
+    public String getTeacher2() {
+        return this.teacher2;
+    }
 
     public void setTeacher(String teacher) {
         this.teacher = teacher;
     }
+
+    public void setTeacher2(String teacher2) {
+        this.teacher2 = teacher2;
+    }
+
 }
