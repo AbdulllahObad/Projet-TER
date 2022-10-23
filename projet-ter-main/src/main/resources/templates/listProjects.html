@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Projects List</title>
+    <link rel="stylesheet" href="/main.css" />
+  </head>
+  <body>
+    <h1>Projects List</h1>
+    <a href="addProject">Add Projects</a>
+    <br /><br />
+    <div>
+      <table border="1">
+        <tr>
+          <th>Title</th>
+          <th>Teacher</th>
+          <th>Student</th>
+        </tr>
+        <tr th:each="project : ${projects}">
+          <td th:utext="${project.title}">...</td>
+          <td th:utext="${project.teacher.lastName}">...</td>
+          <td th:utext="${project.student.lastName}">...</td>
+          <td>
+            <a th:href="@{/showProjectUpdateForm/{id}(id=${project.id})}">
+              Update
+            </a>
+            <a th:href="@{/deleteProject/{id}(id=${project.id})}"> Delete </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
