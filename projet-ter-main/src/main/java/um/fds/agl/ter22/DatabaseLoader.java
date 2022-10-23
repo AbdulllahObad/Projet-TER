@@ -8,7 +8,6 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.context.SecurityContextHolder;
 import um.fds.agl.ter22.entities.*;
 import um.fds.agl.ter22.repositories.*;
-import um.fds.agl.ter22.services.TERProjectService;
 
 @Component
 public class DatabaseLoader implements CommandLineRunner {
@@ -18,13 +17,16 @@ public class DatabaseLoader implements CommandLineRunner {
     private final StudentRepository students;
     private final TERProjectRepository terprojects;
 
+    private final GroupRepository groups;
+
 
     @Autowired
-    public DatabaseLoader(TeacherRepository teachers, TERManagerRepository managers, StudentRepository students,TERProjectRepository terprojects) {
+    public DatabaseLoader(TeacherRepository teachers, TERManagerRepository managers, StudentRepository students, TERProjectRepository terprojects, GroupRepository groups) {
         this.teachers = teachers;
         this.managers=managers;
         this.students=students;
         this.terprojects=terprojects;
+        this.groups = groups;
     }
 
     @Override
@@ -42,10 +44,13 @@ public class DatabaseLoader implements CommandLineRunner {
         this.students.save(new Student("sdf", "sdf"));
 
 
+
         Teacher pro=new Teacher("pro","pro","pro",terM1Manager,"ROLE_TEACHER");
         Student pra=new Student(4444,"pra","pra");
         TERProject proj=new TERProject("Apple",pro,pra);
 
+        Group gr=new Group("gr",pra );
+        //this.groups.save(gr);
         this.students.save(pra);
         this.teachers.save(pro);
 
