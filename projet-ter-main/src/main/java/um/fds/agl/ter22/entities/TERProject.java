@@ -10,6 +10,8 @@ import javax.persistence.OneToMany;
 public class TERProject {
 	private String title;
 	private @ManyToOne Teacher teacher;
+
+	private @ManyToOne Teacher teacher2;
 	private @ManyToOne Student student;
 	private @Id @GeneratedValue Long id;
 
@@ -21,6 +23,14 @@ public class TERProject {
 		this.teacher = teacher;
 		this.student = student;
 	}
+
+	public TERProject(String title, Teacher teacher,Teacher teacher2, Student student) {
+		this.title = title;
+		this.teacher = teacher;
+		this.teacher2 = teacher2;
+		this.student = student;
+	}
+
 
 
 
@@ -42,6 +52,9 @@ public class TERProject {
 
 	public Teacher getTeacher() {
 		return teacher;
+	}
+	public Teacher getTeacher2() {
+		return teacher2;
 	}
 
 	public void setTeacher(Teacher teacher) {

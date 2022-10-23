@@ -49,10 +49,12 @@ public class TERProjectController implements ErrorController {
             project = terProjectService.findById(terProjectForm.getId()).get();
             project.setTitle(terProjectForm.getTitle());
             project.setTeacher(teacherService.getTeacherByLastName(terProjectForm.getTeacher()));
+            project.setTeacher(teacherService.getTeacherByLastName(terProjectForm.getTeacher2()));
             project.setStudent(studentService.getStudentByLastName(terProjectForm.getStudent()));
         } else { //faut mettre else if le nom de student or teacher n'existe pas faut pas construire le project
             project = new TERProject(terProjectForm.getTitle(),
                     teacherService.getTeacherByLastName(terProjectForm.getTeacher()),
+                    teacherService.getTeacherByLastName(terProjectForm.getTeacher2()),
                     studentService.getStudentByLastName(terProjectForm.getStudent())
             );
         }
@@ -66,6 +68,7 @@ public class TERProjectController implements ErrorController {
         TERProjectForm terProjectForm = new TERProjectForm(id,
                 terProjectService.findById(id).get().getTitle(),
                 terProjectService.findById(id).get().getTeacher().getLastName(),
+                terProjectService.findById(id).get().getTeacher2().getLastName(),
                 terProjectService.findById(id).get().getStudent().getLastName());
         model.addAttribute("terProjectForm", terProjectForm);
         return "updateProject";
