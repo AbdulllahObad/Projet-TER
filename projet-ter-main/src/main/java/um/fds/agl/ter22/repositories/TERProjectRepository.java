@@ -13,7 +13,8 @@ public interface TERProjectRepository<T extends TERProject> extends CrudReposito
 	TERProject save(@Param("terProject") TERProject terProject);
 
 	@Override
-	@PreAuthorize("hasRole('ROLE_MANAGER') or hasRole('ROLE_TEACHER')")
+
+	@PreAuthorize("hasRole('ROLE_MANAGER') or (#terproject?.teacher == null or #terproject?.teacher?.lastName == authentication?.name)")
 	void delete(@Param("terProject") TERProject terProject);
 
 	@Override
