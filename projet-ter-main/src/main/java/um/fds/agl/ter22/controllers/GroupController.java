@@ -28,7 +28,7 @@ public class GroupController implements ErrorController {
 
     @Autowired
     private GroupService groupService;
-
+    //test the comment
     @GetMapping("/listGroups")
     public Iterable<Group> getGroups(Model model) {
         Iterable<Group> groups = groupService.getGroups();
