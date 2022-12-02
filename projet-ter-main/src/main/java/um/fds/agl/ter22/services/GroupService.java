@@ -16,7 +16,7 @@ public class GroupService {
         return groupRepository.findById(id);
     }
     public Iterable<Group> getGroups(){
-        return groupRepository.findAll();
+        return groupRepository.findAll();//problem iz here
 
     }
     public Group saveGroup(Group group){

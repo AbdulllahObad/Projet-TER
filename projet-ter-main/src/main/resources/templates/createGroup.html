@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Add Subject</title>
+  <link rel="stylesheet" href="/main.css" />
+
+</head>
+<body>
+<h1>Create a Group:</h1>
+
+<form th:action="@{/createGroup}"
+      th:object="${groupForm}" method="POST">
+  Group Name:
+  <input type="text" th:field="*{nom}"/>
+  <br/>
+
+  <input type="submit" value="Create"/>
+</form>
+
+<br/>
+
+<!-- Check if errorMessage is not null and not empty -->
+
+<div th:if="${errorMessage}" th:utext="${errorMessage}"
+     style="color:red;font-style:italic;">
+  ...
+</div>
+
+<a  th:href="@{/listGroups}">return</a>
+</body>
+</html>

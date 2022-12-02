@@ -8,7 +8,6 @@ import java.util.List;
 public class Group {
     private String nom ="No Name";
     private @OneToMany (mappedBy = "group")List<Student> student;
-    //   (mappedBy = "group")
     private @Id @GeneratedValue Long id;
 
     public Group() {
@@ -21,21 +20,35 @@ public class Group {
         this.student=new ArrayList<>();
 
     }
+    public Group(String groupName, List<Student> student) {
+        if(!(groupName.isBlank()))
+            this.nom = nom;
 
-    public String getNom() {
-        return nom;
+        this.student = student;
     }
 
+    public Group(long id, String nom) {
+        this(nom);
+        this.id = id;
+    }
+
+    public Group(long id, String nom, List<Student> student) {
+        this(nom, student);
+        this.id = id;
+    }
+
+
+    public String getnom() {
+        return nom;
+    }
 
     public Long getId() {
         return id;
     }
 
-    public void setNom(String nom) {
+    public void setnom(String nom) {
         this.nom = nom;
     }
-
-
 
     public void setId(Long id) {
         this.id = id;

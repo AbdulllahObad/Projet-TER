@@ -31,15 +31,13 @@ public class GroupController implements ErrorController {
     private StudentRepository studentRepository;
 
     @Autowired
-    private TERProjectService terProjectService;
-    @Autowired
     private GroupService groupService;
+
     //test the comment
     @GetMapping("/listGroups")
     public Iterable<Group> getGroups(Model model) {
-        Iterable<Group> groups = groupService.getGroups();
-        model.addAttribute("groups", groups);
-        return groups;
+        model.addAttribute("groups", groupService.getGroups()); //problem issss here
+        return groupService.getGroups();
     }
     //preAuthorize à ajouter
     @GetMapping(value = { "/createGroup" })
