@@ -5,7 +5,7 @@ import org.springframework.data.repository.query.Param;
 import um.fds.agl.ter22.entities.Group;
 import um.fds.agl.ter22.entities.TERProject;
 
-public interface GroupRepository<G extends Group> extends CrudRepository<G, Long>{
+public interface GroupRepository extends GroupBaseRepository<Group>{
     @Override
     Group save(@Param("group") Group group);
     @Override
