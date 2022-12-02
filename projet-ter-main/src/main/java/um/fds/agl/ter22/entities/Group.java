@@ -7,7 +7,11 @@ import java.util.ArrayList;
 public class Group {
     private String nom;
     private @ManyToOne Student student;
+    //   private @OneToMany(mappedBy = "group") List<Student> studentList;
     private @Id @GeneratedValue Long id;
+
+    public Group() {
+    }
 
     public Group(String nom, Student student) {
         this.nom = nom;
