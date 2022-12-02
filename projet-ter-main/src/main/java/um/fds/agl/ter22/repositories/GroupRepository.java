@@ -6,5 +6,11 @@ import um.fds.agl.ter22.entities.Group;
 import um.fds.agl.ter22.entities.TERProject;
 
 public interface GroupRepository<G extends Group> extends CrudRepository<G, Long>{
-    TERProject save(@Param("terProject") TERProject terProject);
+    @Override
+    Group save(@Param("group") Group group);
+    @Override
+    void deleteById(@Param("id") Long id);
+    @Override
+    void delete(@Param("group") Group group);
+    //pre authorized à ajouter plus tard
 }

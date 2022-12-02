@@ -5,22 +5,22 @@ import java.util.ArrayList;
 
 public class GroupForm {
     private String nom;
-    private ArrayList<Student> Students;
+
     private Long id;
 
-    public GroupForm(Long id,String nom, ArrayList<Student> students) {
+    public GroupForm(Long id,String nom) {
         this.id=id;
         this.nom = nom;
-        Students = students;
+    }
+
+    public GroupForm() {
+
     }
 
     public String getNom() {
         return nom;
     }
 
-    public ArrayList<Student> getStudents() {
-        return Students;
-    }
 
     public Long getId() {
         return id;
@@ -30,8 +30,5 @@ public class GroupForm {
         this.nom = nom;
     }
 
-    public void setStudents(ArrayList<Student> students) {
-        Students = students;
-    }
 
 }
