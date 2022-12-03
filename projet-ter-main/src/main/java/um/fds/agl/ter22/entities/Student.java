@@ -1,10 +1,12 @@
 package um.fds.agl.ter22.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Student extends UserTER {
 
+    private @ManyToOne Group group;
     // ici on mettra le groupe
 
     public Student(String firstName, String lastName) {

@@ -11,13 +11,19 @@ import java.util.Optional;
 public class GroupService {
     @Autowired
     private GroupRepository groupRepository;
+
     public Optional<Group> getGroup(final Long id){
         return groupRepository.findById(id);
     }
     public Iterable<Group> getGroups(){
-        return groupRepository.findAll();
+        return groupRepository.findAll();//problem iz here
 
     }
+    public Group saveGroup(Group group){
+        Group savedStudent= groupRepository.save(group);
+        return savedStudent;
+    }
+    //deleteGroup à ajouter plustard
 
     public Optional<Group> findById(long id){return groupRepository.findById(id);}
 }

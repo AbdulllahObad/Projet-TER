@@ -14,11 +14,13 @@
     <tr>
       <th>Nom Group</th>
     </tr>
+
     <tr th:each="group : ${groups}">
       <td th:utext="${group.nom}">...</td>
 
     </tr>
   </table>
+    <a  href="createGroup">Create Group</a>
 </div>
 </body>
 </html>

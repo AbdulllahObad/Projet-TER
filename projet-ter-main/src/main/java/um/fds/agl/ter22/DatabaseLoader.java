@@ -17,16 +17,16 @@ public class DatabaseLoader implements CommandLineRunner {
     private final StudentRepository students;
     private final TERProjectRepository terprojects;
 
-    private final GroupRepository groups;
+
 
 
     @Autowired
-    public DatabaseLoader(TeacherRepository teachers, TERManagerRepository managers, StudentRepository students, TERProjectRepository terprojects, GroupRepository groups) {
+    public DatabaseLoader(TeacherRepository teachers, TERManagerRepository managers, StudentRepository students, TERProjectRepository terprojects) {
         this.teachers = teachers;
         this.managers=managers;
         this.students=students;
         this.terprojects=terprojects;
-        this.groups = groups;
+
     }
 
     @Override
@@ -49,7 +49,7 @@ public class DatabaseLoader implements CommandLineRunner {
         Student pra=new Student(4444,"pra","pra");
         TERProject proj=new TERProject("Apple",pro,pra);
 
-        Group gr=new Group("gr",pra );
+        //Group gr=new Group("gr" );
         //this.groups.save(gr);
         this.students.save(pra);
         this.teachers.save(pro);

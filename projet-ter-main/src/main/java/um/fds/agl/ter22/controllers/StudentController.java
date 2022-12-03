@@ -21,6 +21,7 @@ public class StudentController implements ErrorController {
 
     @GetMapping("/listStudents")
     public Iterable<Student> getStudents(Model model) {
+
         model.addAttribute("students", studentService.getStudents());
         return studentService.getStudents();
     }
