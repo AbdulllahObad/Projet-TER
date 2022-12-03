@@ -24,6 +24,13 @@ public class Teacher extends UserTER {
         this.setRoles(roles);
         this.terManager = manager;
     }
+    public Teacher(Long id,String firstName, String lastName, TERManager manager) {
+        super(id,firstName, lastName);
+        String[] roles = { "ROLE_TEACHER" };
+        this.setRoles(roles);
+        this.terManager = manager;
+
+    }
 
     public TERManager getTerManager() {
         return terManager;
