@@ -20,7 +20,7 @@
 		<testcontainers.version>1.17.4</testcontainers.version>
 		<selenium.version>4.5.0</selenium.version>
 		<byte-buddy.version>1.12.17</byte-buddy.version>
-		<sonar.organization>gabriel-combe</sonar.organization>
+		<sonar.organization>sateamall</sonar.organization>
 		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
 		<sonar.sources>src/main/java,src/main/resources</sonar.sources>
 	</properties>
@@ -127,6 +127,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M7</version>
 				<configuration>
+
+					
+
 					<excludes>
 						<exclude>SeleniumTests/*.java</exclude>
 					</excludes>
