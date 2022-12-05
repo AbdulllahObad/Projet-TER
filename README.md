@@ -1,5 +1,8 @@
-# TER Project
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=SateaMall_ter-project&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=SateaMall_ter-project)
 
+
+
+# TER Project
 
 
 ## Getting started
