@@ -1,6 +1,6 @@
 # TER Project
 
-
+https://sonarcloud.io/api/project_badges/measure?project=SateaMall_ter-project&metric=coverage
 
 ## Getting started
 
